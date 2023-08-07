@@ -5,8 +5,23 @@
     4. The function should return all initials in uppercase.
 */
 
+
 let createInitialsFromName = (name) => {
-  // Complete the function
+  let words = name.split(" ");
+  let wordlen = words.length;
+  console.log(wordlen)
+  fname = words[0].split("");
+  lname = words[wordlen-1].split("");
+  let initials ="";
+  if (wordlen > 1) {
+      
+      initials = fname[0]+lname[0];
+    } else {
+      initials = fname[0]+fname[1];
+    }
+
+  return initials.toUpperCase();
+
 };
 
 module.exports = createInitialsFromName;
