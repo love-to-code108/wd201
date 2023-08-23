@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form wd101</title>
+
+    <link rel="stylesheet" href="./output.css">
+</head>
+<body class=" w-[100vw] flex flex-col items-center justify-center">
+    
+
+    
+        <!-- THIS DIV WRAPS AROUND THE FORM -->
+        <div id="formWrapper" class="InputWrapper  border-2 shadow-lg flex flex-col items-center justify-center">
+            <form action="" id="inputForm">
+
+                <!-- NAME -->
+                <div class=" flex px-4 py-4 relative justify-start InputFields ">
+                    <label class="px-1 py-1 mx-4 text-3xl" for="Name">Name</label>
+                    <input class="px-1 py-1 text-3xl w-3/5 absolute right-0 
+                     border-black border-2" required type="text" name="userName" id="name">
+                </div>
+
+                <!-- EMAIL -->
+                <div class="flex px-4 py-4 relative justify-start InputFields">
+                    <label class="px-1 py-1 mx-4 text-3xl" for="Email">Email</label>
+                    <input class="px-1 py-1 text-3xl w-3/5 absolute right-0 border-black border-2" type="email" name="userEmail" id="email" required>
+                </div>
+
+                <!-- PASSWORD -->
+                <div class="flex px-4 py-4 relative justify-start InputFields">
+                    <label class="px-1 py-1 mx-4 text-3xl" for="Password">Password</label>
+                    <input class="px-1 py-1 text-3xl w-3/5 absolute right-0 border-black border-2" type="password" name="userPassword" id="password" required>
+                </div>
+
+                <!-- DATE OF BIRTH -->
+                <div class="flex px-4 py-4 relative justify-start InputFields">
+                    <label class="px-1 py-1 mx-4 text-3xl" for="DOB">Date Of Birth</label>
+                    <input class="px-1 py-1 text-3xl w-3/5 absolute right-0 border-black border-2" type="date" name="userDOB" id="dob" required min="1968-08-08" max="2005-08-08" >
+                </div>
+
+                <!-- CHECK BOX -->
+                <div class="flex px-4 py-4 justify-center items-center">
+                    <label class=" px-1 py-1 text-3xl mt-8" for="TermsAndCondition">Accept The Terms And Conditions</label>
+                    <input class="mt-8 ml-4 w-4 h-4" type="checkbox" name="userT&C" id="TermsAndCondition">
+                </div>
+                
+                <!-- SUBMIT BUTTON -->
+                <div class="flex px-4 py-4 justify-center">
+                    <button class="border-2 px-4 py-2 text-2xl border-black " type="submit" >Submit</button>
+                </div>
+
+
+
+            </form>
+            <button onclick="ResetLocalStorage()" class="border-2 px-4 py-2 text-2xl border-red-600">Reset</button>
+
+
+        </div>
+        <div>
+            <h1 class="text-4xl py-8 text-center">This is the table</h1>
+            <div id="showUserEntries"></div>
+
+        </div>
+
+        <script src="./index.js"></script>
+    
+</body>
+</html>
+
+<!-- <table>
+    <th>NAME</th>
+    <th>EMAIL</th>
+    <th>PASSWORD</th>
+    <th>DOB</th>
+    <th>ACCEPTED</th>
+    <tr>${tableEntries}</tr>
+</table> -->
