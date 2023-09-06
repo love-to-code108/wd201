@@ -15,7 +15,11 @@ describe("Tests for functions in todo.js", function () {
     await db.sequelize.sync({ force: true })
   });
 
-
+  test("Todo.overdue should return all tasks (including completed ones) that are past their due date", async () => {
+    const todo = await db.Todo.addTask({ title: "This is a sample item", dueDate: getJSDate(-2), completed: false });
+    const items = await db.Todo.overdue();
+    expect(items.length).toBe(1);
+  });
 
   test("Todo.dueToday should return all tasks that are due today (including completed ones)", async () => {
     const dueTodayItems = await db.Todo.dueToday();
